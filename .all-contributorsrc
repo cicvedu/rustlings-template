@@ -1668,6 +1668,33 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "mfurak",
+      "name": "Marek Furák",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38523093?v=4",
+      "profile": "https://github.com/mfurak",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "winterqt",
+      "name": "Winter",
+      "avatar_url": "https://avatars.githubusercontent.com/u/78392041?v=4",
+      "profile": "https://winter.cafe",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "MoritzBoehme",
+      "name": "Moritz Böhme",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42215704?v=4",
+      "profile": "https://moritzboeh.me",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 8,
