@@ -6,6 +6,7 @@ use argh::FromArgs;
 use console::Emoji;
 use notify::DebouncedEvent;
 use notify::{RecommendedWatcher, RecursiveMode, Watcher};
+use serde::{Deserialize, Serialize};
 use std::ffi::OsStr;
 use std::fs;
 use std::io::{self, prelude::*};
@@ -16,6 +17,7 @@ use std::sync::mpsc::{channel, RecvTimeoutError};
 use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::Duration;
+use std::time::{UNIX_EPOCH, SystemTime};
 
 #[macro_use]
 mod ui;
@@ -51,7 +53,12 @@ enum Subcommands {
     Hint(HintArgs),
     List(ListArgs),
     Lsp(LspArgs),
+    CicvVerify(CicvVerifyArgs)
 }
+
+#[derive(FromArgs, PartialEq, Debug)]
+#[argh(subcommand, name = "cicvverify", description = "cicvverify")]
+struct CicvVerifyArgs {}
 
 #[derive(FromArgs, PartialEq, Debug)]
 #[argh(subcommand, name = "verify")]
@@ -121,7 +128,29 @@ struct ListArgs {
     solved: bool,
 }
 
-fn main() {
+#[derive(Deserialize, Serialize)]
+pub struct ExerciseCheckList {
+    pub exercises: Vec<ExerciseResult>,
+    pub user_name: Option<String>,
+    pub statistics: ExerciseStatistics
+}
+
+#[derive(Deserialize, Serialize)]
+pub struct ExerciseResult {
+    pub name: String,
+    pub result: bool
+}
+
+#[derive(Deserialize, Serialize)]
+pub struct  ExerciseStatistics {
+    pub total_exercations: usize,
+    pub total_succeeds: usize,
+    pub total_failures: usize,
+    pub total_time: u32,
+}
+
+#[tokio::main]
+async fn main() {
     let args: Args = argh::from_env();
 
     if args.version {
@@ -216,7 +245,6 @@ fn main() {
 
         Subcommands::Run(subargs) => {
             let exercise = find_exercise(&subargs.name, &exercises);
-
             run(exercise, verbose).unwrap_or_else(|_| std::process::exit(1));
         }
 
@@ -236,6 +264,73 @@ fn main() {
             verify(&exercises, (0, exercises.len()), verbose, false)
                 .unwrap_or_else(|_| std::process::exit(1));
         }
+
+        Subcommands::CicvVerify(_subargs) => {
+            // let toml_str = &fs::read_to_string("info.toml").unwrap();
+            // exercises = toml::from_str::<ExerciseList>(toml_str).unwrap().exercises;
+            let now_start = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
+            let rights = Arc::new(Mutex::new(0));
+            let alls = exercises.len();
+
+            let exercise_check_list =  Arc::new(Mutex::new(
+                ExerciseCheckList {
+                    exercises: vec![], 
+                    user_name:  None, 
+                    statistics: ExerciseStatistics { 
+                        total_exercations: alls, 
+                        total_succeeds: 0, 
+                        total_failures: 0, 
+                        total_time: 0, 
+                    }
+                }
+            ));
+
+            let mut tasks = vec![];
+            for exercise in exercises {
+                let now_start = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
+                let inner_exercise = exercise;
+                let c_mutex = Arc::clone(&rights);
+                let exercise_check_list_ref = Arc::clone(&exercise_check_list);
+                let _verbose = verbose.clone();
+                let t = tokio::task::spawn( async move {
+                    match run(&inner_exercise, true) {
+                    // match verify(vec![&inner_exercise], (0, 1), true, true) {
+                        Ok(_) => {
+                            *c_mutex.lock().unwrap() += 1;
+                            println!("{}执行成功", inner_exercise.name);
+                            println!("总的题目数: {}", alls);
+                            println!("当前做正确的题目数: {}", *c_mutex.lock().unwrap());
+                            let now_end = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
+                            println!("当前修改试卷耗时: {} s", now_end - now_start);
+                            exercise_check_list_ref.lock().unwrap().exercises.push(ExerciseResult{ 
+                                name: inner_exercise.name, result: true,
+                            });
+                            exercise_check_list_ref.lock().unwrap().statistics.total_succeeds += 1;
+                        },
+                        Err(_) => {
+                            println!("{}执行失败", inner_exercise.name);
+                            println!("总的题目数: {}", alls);
+                            println!("当前做正确的题目数: {}", *c_mutex.lock().unwrap());
+                            let now_end = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
+                            println!("当前修改试卷耗时: {} s", now_end - now_start);
+                            exercise_check_list_ref.lock().unwrap().exercises.push(ExerciseResult{ 
+                                name: inner_exercise.name, result: false,
+                            });
+                            exercise_check_list_ref.lock().unwrap().statistics.total_failures += 1;
+                        }
+                    }
+                });
+                tasks.push(t);
+            }
+            for task in tasks { task.await.unwrap(); }
+            let now_end = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
+            let total_time = now_end - now_start;
+            println!("===============================试卷批改完成,总耗时: {} s; ==================================", total_time);
+            let exercise_check_list_ref = Arc::clone(&exercise_check_list);
+            exercise_check_list_ref.lock().unwrap().statistics.total_time = total_time as u32;
+            let serialized = serde_json::to_string_pretty(&*exercise_check_list.lock().unwrap()).unwrap();
+            fs::write(".github/result/check_result.json", serialized).unwrap();
+        },
 
         Subcommands::Lsp(_subargs) => {
             let mut project = RustAnalyzerProject::new();

@@ -1179,3 +1179,12 @@ path = "exercises/conversions/as_ref_mut.rs"
 mode = "test"
 hint = """
 Add AsRef<str> or AsMut<u32> as a trait bound to the functions."""
+
+
+# 强化训练 DRIVE
+
+[[exercises]]
+name = "drive1"
+path = "exercises/drive/drive1.rs"
+mode = "test"
+hint = "to return a string \"Hello\"  eg: String::from(\"Hello\")"
