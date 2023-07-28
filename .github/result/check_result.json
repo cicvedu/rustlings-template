@@ -1,71 +1,7 @@
 {
   "exercises": [
     {
-      "name": "modules3",
-      "result": false
-    },
-    {
-      "name": "variables4",
-      "result": false
-    },
-    {
-      "name": "functions2",
-      "result": false
-    },
-    {
-      "name": "errors3",
-      "result": false
-    },
-    {
-      "name": "strings1",
-      "result": false
-    },
-    {
-      "name": "generics1",
-      "result": false
-    },
-    {
-      "name": "primitive_types1",
-      "result": false
-    },
-    {
-      "name": "variables1",
-      "result": false
-    },
-    {
-      "name": "vecs2",
-      "result": false
-    },
-    {
-      "name": "options1",
-      "result": false
-    },
-    {
-      "name": "structs1",
-      "result": false
-    },
-    {
-      "name": "variables5",
-      "result": false
-    },
-    {
-      "name": "hashmaps1",
-      "result": false
-    },
-    {
-      "name": "primitive_types2",
-      "result": false
-    },
-    {
-      "name": "functions3",
-      "result": false
-    },
-    {
-      "name": "variables2",
-      "result": false
-    },
-    {
-      "name": "strings2",
+      "name": "intro2",
       "result": false
     },
     {
@@ -73,11 +9,23 @@
       "result": false
     },
     {
+      "name": "functions3",
+      "result": false
+    },
+    {
+      "name": "primitive_types2",
+      "result": false
+    },
+    {
       "name": "options2",
       "result": false
     },
     {
-      "name": "generics2",
+      "name": "hashmaps1",
+      "result": false
+    },
+    {
+      "name": "strings2",
       "result": false
     },
     {
@@ -85,11 +33,19 @@
       "result": false
     },
     {
-      "name": "primitive_types3",
+      "name": "variables5",
       "result": false
     },
     {
-      "name": "variables6",
+      "name": "generics2",
+      "result": false
+    },
+    {
+      "name": "variables2",
+      "result": false
+    },
+    {
+      "name": "variables1",
       "result": false
     },
     {
@@ -97,11 +53,19 @@
       "result": false
     },
     {
-      "name": "variables3",
+      "name": "move_semantics2",
       "result": false
     },
     {
-      "name": "move_semantics2",
+      "name": "primitive_types3",
+      "result": false
+    },
+    {
+      "name": "options3",
+      "result": false
+    },
+    {
+      "name": "variables6",
       "result": false
     },
     {
@@ -113,11 +77,31 @@
       "result": false
     },
     {
+      "name": "variables3",
+      "result": false
+    },
+    {
+      "name": "traits4",
+      "result": false
+    },
+    {
+      "name": "functions5",
+      "result": false
+    },
+    {
       "name": "structs3",
       "result": false
     },
     {
-      "name": "options3",
+      "name": "strings4",
+      "result": false
+    },
+    {
+      "name": "errors1",
+      "result": false
+    },
+    {
+      "name": "move_semantics3",
       "result": false
     },
     {
@@ -129,51 +113,11 @@
       "result": false
     },
     {
-      "name": "traits3",
-      "result": false
-    },
-    {
-      "name": "move_semantics3",
-      "result": false
-    },
-    {
-      "name": "strings4",
-      "result": false
-    },
-    {
-      "name": "functions5",
-      "result": false
-    },
-    {
       "name": "traits2",
       "result": false
     },
     {
-      "name": "enums1",
-      "result": false
-    },
-    {
-      "name": "primitive_types5",
-      "result": false
-    },
-    {
-      "name": "lifetimes1",
-      "result": false
-    },
-    {
-      "name": "traits4",
-      "result": false
-    },
-    {
-      "name": "modules1",
-      "result": false
-    },
-    {
-      "name": "move_semantics4",
-      "result": false
-    },
-    {
-      "name": "errors1",
+      "name": "variables4",
       "result": false
     },
     {
@@ -181,31 +125,11 @@
       "result": false
     },
     {
-      "name": "tests1",
-      "result": false
-    },
-    {
-      "name": "primitive_types6",
-      "result": false
-    },
-    {
-      "name": "lifetimes2",
-      "result": false
-    },
-    {
-      "name": "enums2",
-      "result": false
-    },
-    {
-      "name": "modules2",
-      "result": false
-    },
-    {
       "name": "traits5",
       "result": false
     },
     {
-      "name": "move_semantics5",
+      "name": "modules1",
       "result": false
     },
     {
@@ -213,11 +137,47 @@
       "result": false
     },
     {
+      "name": "enums1",
+      "result": false
+    },
+    {
+      "name": "move_semantics4",
+      "result": false
+    },
+    {
+      "name": "primitive_types5",
+      "result": false
+    },
+    {
+      "name": "lifetimes2",
+      "result": false
+    },
+    {
+      "name": "traits3",
+      "result": false
+    },
+    {
+      "name": "functions2",
+      "result": false
+    },
+    {
       "name": "if2",
       "result": false
     },
     {
-      "name": "tests2",
+      "name": "modules2",
+      "result": false
+    },
+    {
+      "name": "errors3",
+      "result": false
+    },
+    {
+      "name": "move_semantics5",
+      "result": false
+    },
+    {
+      "name": "enums2",
       "result": false
     },
     {
@@ -225,11 +185,31 @@
       "result": false
     },
     {
-      "name": "vecs1",
+      "name": "primitive_types6",
       "result": false
     },
     {
-      "name": "tests4",
+      "name": "tests2",
+      "result": false
+    },
+    {
+      "name": "iterators1",
+      "result": false
+    },
+    {
+      "name": "modules3",
+      "result": false
+    },
+    {
+      "name": "if3",
+      "result": false
+    },
+    {
+      "name": "iterators4",
+      "result": false
+    },
+    {
+      "name": "tests1",
       "result": false
     },
     {
@@ -241,7 +221,7 @@
       "result": false
     },
     {
-      "name": "if3",
+      "name": "vecs1",
       "result": false
     },
     {
@@ -249,19 +229,7 @@
       "result": false
     },
     {
-      "name": "iterators1",
-      "result": false
-    },
-    {
-      "name": "threads2",
-      "result": false
-    },
-    {
-      "name": "intro1",
-      "result": true
-    },
-    {
-      "name": "cow1",
+      "name": "iterators2",
       "result": false
     },
     {
@@ -269,19 +237,31 @@
       "result": false
     },
     {
+      "name": "tests4",
+      "result": false
+    },
+    {
+      "name": "vecs2",
+      "result": false
+    },
+    {
+      "name": "strings1",
+      "result": false
+    },
+    {
+      "name": "cow1",
+      "result": false
+    },
+    {
+      "name": "structs1",
+      "result": false
+    },
+    {
+      "name": "primitive_types1",
+      "result": false
+    },
+    {
       "name": "macros1",
-      "result": false
-    },
-    {
-      "name": "iterators2",
-      "result": false
-    },
-    {
-      "name": "intro2",
-      "result": false
-    },
-    {
-      "name": "threads3",
       "result": false
     },
     {
@@ -289,11 +269,27 @@
       "result": false
     },
     {
+      "name": "threads2",
+      "result": false
+    },
+    {
+      "name": "errors4",
+      "result": false
+    },
+    {
       "name": "macros4",
       "result": false
     },
     {
+      "name": "errors5",
+      "result": false
+    },
+    {
       "name": "macros2",
+      "result": false
+    },
+    {
+      "name": "threads3",
       "result": false
     },
     {
@@ -321,39 +317,15 @@
       "result": false
     },
     {
-      "name": "iterators4",
+      "name": "drive2",
       "result": false
     },
     {
-      "name": "errors4",
+      "name": "drive3",
       "result": false
     },
     {
-      "name": "errors5",
-      "result": false
-    },
-    {
-      "name": "arc1",
-      "result": false
-    },
-    {
-      "name": "quiz2",
-      "result": false
-    },
-    {
-      "name": "clippy1",
-      "result": false
-    },
-    {
-      "name": "box1",
-      "result": false
-    },
-    {
-      "name": "clippy2",
-      "result": false
-    },
-    {
-      "name": "clippy3",
+      "name": "drive4",
       "result": false
     },
     {
@@ -361,11 +333,47 @@
       "result": false
     },
     {
+      "name": "drive5",
+      "result": false
+    },
+    {
+      "name": "generics1",
+      "result": false
+    },
+    {
+      "name": "lifetimes1",
+      "result": false
+    },
+    {
+      "name": "quiz2",
+      "result": false
+    },
+    {
+      "name": "box1",
+      "result": false
+    },
+    {
+      "name": "options1",
+      "result": false
+    },
+    {
+      "name": "arc1",
+      "result": false
+    },
+    {
+      "name": "clippy1",
+      "result": false
+    },
+    {
+      "name": "clippy3",
+      "result": false
+    },
+    {
       "name": "quiz3",
       "result": false
     },
     {
-      "name": "iterators3",
+      "name": "clippy2",
       "result": false
     },
     {
@@ -377,23 +385,27 @@
       "result": false
     },
     {
-      "name": "threads1",
+      "name": "iterators3",
       "result": false
     },
     {
-      "name": "hashmaps3",
+      "name": "threads1",
       "result": false
     },
     {
       "name": "errors6",
       "result": false
+    },
+    {
+      "name": "hashmaps3",
+      "result": false
     }
   ],
   "user_name": null,
   "statistics": {
-    "total_exercations": 97,
-    "total_succeeds": 1,
-    "total_failures": 96,
+    "total_exercations": 100,
+    "total_succeeds": 0,
+    "total_failures": 100,
     "total_time": 3
   }
 }

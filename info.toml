@@ -1,12 +1,12 @@
 # INTRO
 
-[[exercises]]
-name = "intro1"
-path = "exercises/intro/intro1.rs"
-mode = "compile"
-hint = """
-Remove the I AM NOT DONE comment in the exercises/intro/intro1.rs file
-to move on to the next exercise."""
+# [[exercises]]
+# name = "intro1"
+# path = "exercises/intro/intro1.rs"
+# mode = "compile"
+# hint = """
+# Remove the I AM NOT DONE comment in the exercises/intro/intro1.rs file
+# to move on to the next exercise."""
 
 [[exercises]]
 name = "intro2"
@@ -1186,5 +1186,29 @@ Add AsRef<str> or AsMut<u32> as a trait bound to the functions."""
 [[exercises]]
 name = "drive1"
 path = "exercises/drive/drive1.rs"
+mode = "test"
+hint = "to return a string \"Hello\"  eg: String::from(\"Hello\")"
+
+[[exercises]]
+name = "drive2"
+path = "exercises/drive/drive2.rs"
+mode = "test"
+hint = "to return a string \"Hello\"  eg: String::from(\"Hello\")"
+
+[[exercises]]
+name = "drive3"
+path = "exercises/drive/drive3.rs"
+mode = "test"
+hint = "to return a string \"Hello\"  eg: String::from(\"Hello\")"
+
+[[exercises]]
+name = "drive4"
+path = "exercises/drive/drive4.rs"
+mode = "test"
+hint = "to return a string \"Hello\"  eg: String::from(\"Hello\")"
+
+[[exercises]]
+name = "drive5"
+path = "exercises/drive/drive5.rs"
 mode = "test"
 hint = "to return a string \"Hello\"  eg: String::from(\"Hello\")"
