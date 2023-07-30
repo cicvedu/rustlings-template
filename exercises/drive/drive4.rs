@@ -5,9 +5,12 @@
 
 // I AM NOT DONE
 
-fn d1() -> String {
-    // to return a string "Hello" 
-    // String::from("Hello")
+// This execrise shares build.rs with the previous exercise.
+// You need to add some code to build.rs to make both this exercise and
+// the previous one work.
+
+fn main() {
+
 }
 
 
@@ -17,6 +20,9 @@ mod tests {
 
     #[test]
     fn test_success() {
-        assert_eq!(d1(), "Hello".to_owned());
+        #[cfg(feature = "pass")]
+        return;
+
+        panic!("no cfg set");
     }
 }

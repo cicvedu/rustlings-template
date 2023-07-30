@@ -5,9 +5,9 @@
 
 // I AM NOT DONE
 
-fn d1() -> String {
-    // to return a string "Hello" 
-    // String::from("Hello")
+fn modify_by_address(address: usize) {
+    // `address` is a memory address, there is an u32 at that address. try modify
+    // the u32's value to 0xAABBCCDD
 }
 
 
@@ -17,6 +17,8 @@ mod tests {
 
     #[test]
     fn test_success() {
-        assert_eq!(d1(), "Hello".to_owned());
+        let mut t:u32 = 0x12345678;
+        modify_by_address(&mut t as *mut u32 as usize);
+        assert!(t == 0xAABBCCDD);
     }
 }
