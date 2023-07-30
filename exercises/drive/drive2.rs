@@ -1,4 +1,4 @@
-// drive1.rs
+// drive2.rs
 //
 // Execute `rustlings hint drive1` or use the `hint` watch subcommand for a
 // hint.
