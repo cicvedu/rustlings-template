@@ -1187,25 +1187,25 @@ Add AsRef<str> or AsMut<u32> as a trait bound to the functions."""
 name = "drive1"
 path = "exercises/drive/drive1.rs"
 mode = "test"
-hint = "to return a string \"Hello\"  eg: String::from(\"Hello\")"
+hint = "you should use unsafe"
 
 [[exercises]]
 name = "drive2"
 path = "exercises/drive/drive2.rs"
 mode = "test"
-hint = "to return a string \"Hello\"  eg: String::from(\"Hello\")"
+hint = "you should use unsafe"
 
 [[exercises]]
 name = "drive3"
 path = "exercises/drive/drive3.rs"
-mode = "test"
-hint = "to return a string \"Hello\"  eg: String::from(\"Hello\")"
+mode = "buildscript"
+hint = "no hint"
 
 [[exercises]]
 name = "drive4"
 path = "exercises/drive/drive4.rs"
-mode = "test"
-hint = "to return a string \"Hello\"  eg: String::from(\"Hello\")"
+mode = "buildscript"
+hint = "no hint"
 
 [[exercises]]
 name = "drive5"
