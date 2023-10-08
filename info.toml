@@ -1199,16 +1199,16 @@ hint = "you should use unsafe"
 name = "drive3"
 path = "exercises/drive/drive3.rs"
 mode = "buildscript"
-hint = "no hint"
+hint = "see the 'Build Scripts' chapter in 'the Cargo Book'."
 
 [[exercises]]
 name = "drive4"
 path = "exercises/drive/drive4.rs"
 mode = "buildscript"
-hint = "no hint"
+hint = "see the 'Build Scripts' chapter in 'the Cargo Book'."
 
 [[exercises]]
 name = "drive5"
 path = "exercises/drive/drive5.rs"
 mode = "test"
-hint = "to return a string \"Hello\"  eg: String::from(\"Hello\")"
+hint = "This is a hard exercise, you need to know how does compiler and linker work. You may want to watch the video at https://www.bilibili.com/video/BV1gL411A7dX, and then read the 'FFI' chapter of 'The Rustonomicon'."
